@@ -1,4 +1,4 @@
-# .Load Dataset
+#Load Dataset
 2.Display Shape
 3.Display Data Types
 4.Display Summary Statistics
