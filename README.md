@@ -83,3 +83,47 @@ print(df["Faculty"].value_counts()) ใช้นับจำนวนแต่�
                         Label
 แล้วแต่ Dataset ว่าจะใช้คอลัมน์ไหน
 ในที่นี้ใช้ Faculty จึงเขียน df["Faculty"].value_counts()
+
+
+
+
+#Load Dataset UTKFace Dataset
+ติดตั้ง Library ที่จำเป็น
+pip install numpy pandas matplotlib pillow scikit-learn
+LAB 1: Regression (Regression.py)
+  เน้นการทำนาย อายุ (Age) จากรูปภาพใบหน้า
+    Simple Linear Regression: ดึง Feature เพียงพิกเซลเดียวตรงกลางภาพ (1 Feature) มาทำนายอายุ
+    Multiple Linear Regression: ดึง Feature ทุกพิกเซลของภาพ (1,024 Features) มาประมวลผล
+    Age Prediction S: แสดงตัวอย่างตารางเปรียบเทียบผลการทำนายอายุกับอายุจริง พร้อมวัดผลด้วยค่า MAE, RMSE และ R² Score
+
+LAB 2: Classification (Classification.py)
+   เน้นการจำแนก เพศ (Gender: ชาย/หญิง) จากรูปภาพใบหน้า
+    Preparing Classification Data: จัดทำ Feature Scaling (StandardScaler) และลดมิติข้อมูลด้วย PCA เหลือ 2D
+    Logistic Regression: การเทรนโมเดล Logistic Regression พร้อมแสดงค่า Accuracy Score
+    Gender Prediction: ตารางแสดงตัวอย่างผลการทำนายเพศเทียบกับค่าจริง
+    Confusion Matrix: แสดงค่า Confusion Matrix Array และ Classification Report (Precision / Recall / F1-Score)
+    Decision Boundary Visualization: พล็อต กราฟ Decision Boundary 2D ร่วมกับ Confusion Matrix Display
+
+    📊 Model Comparison (สรุปและเปรียบเทียบประสิทธิภาพโมเดล)
+
+การเปรียบเทียบการทำงานและประสิทธิภาพของแต่ละอัลกอริทึมใน **LAB 1** และ **LAB 2**:
+
+### 📑 ตารางเปรียบเทียบเชิงสรุป
+
+| Model Algorithm | Task Type | Features Used | Key Metrics (โดยประมาณ) | สรุปผลและจุดเด่น/ข้อจำกัด |
+| :--- | :--- | :--- | :--- | :--- |
+| **Simple Linear Regression** *(LAB 1)* | Regression (ทำนายอายุ) | 1 พิกเซล (ตรงกลางภาพ) | • High MAE<br>• Low R² | **ข้อจำกัด:** พิกเซลจุดเดียวไม่เพียงพอที่จะระบุความเปลี่ยนแปลงของอายุบนใบหน้าได้ |
+| **Multiple Linear Regression** *(LAB 1)* | Regression (ทำนายอายุ) | 1,024 พิกเซล (ทั้งภาพ $32 \times 32$) | • Lower MAE<br>• Higher R² | **จุดเด่น:** ประสิทธิภาพดีขึ้นอย่างชัดเจน เนื่องจากรับข้อมูลโครงสร้างใบหน้าครบทุกมิติ |
+| **Logistic Regression (+ PCA 2D)** *(LAB 2)* | Classification (ทำนายเพศ) | 2 Components (PCA 2D) | • Accuracy ~70–75%<br>• F1-Score ~0.73 | **จุดเด่น:** ลดมิติข้อมูลช่วยให้ประมวลผลไว และนำไปพล็อต กราฟ **Decision Boundary 2D** ได้ง่าย |
+
+---
+
+### 💡 สรุปวิเคราะห์ผลการทดลอง (Key Takeaways)
+
+1. **การเพิ่มจำนวน Features ใน Regression (LAB 1):**
+   * **Simple Linear Regression** ที่ใช้เพียงพิกเซลเดียวตรงกลางภาพ ไม่สามารถสร้างความสัมพันธ์ที่ดีกับอายุจริงได้ ทำให้มีความคลาดเคลื่อน (MAE) สูง
+   * **Multiple Linear Regression** สามารถพิจารณาพิกเซลทั้งหมดบนใบหน้าพร้อมกัน ส่งผลให้ค่าความคลาดเคลื่อนลดลงอย่างเห็นได้ชัด และทำนายอายุได้แม่นยำยิ่งขึ้น
+
+2. **ผลของการทำ Dimensionality Reduction ด้วย PCA (LAB 2):**
+   * การบีบอัดข้อมูลภาพจาก **1,024 พิกเซล เหลือเพียง 2 มิติ (PCA Components)** ช่วยลดภาระการคำนวณของโมเดล **Logistic Regression** ได้อย่างมหาศาล
+   * แม้การลดมิติจะทำให้สูญเสียรายละเอียดบางส่วนไปบ้าง (Information Loss) แต่ยังคงรักษาความแ
