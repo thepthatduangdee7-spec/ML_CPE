@@ -126,4 +126,12 @@ LAB 2: Classification (Classification.py)
 
 2. **ผลของการทำ Dimensionality Reduction ด้วย PCA (LAB 2):**
    * การบีบอัดข้อมูลภาพจาก **1,024 พิกเซล เหลือเพียง 2 มิติ (PCA Components)** ช่วยลดภาระการคำนวณของโมเดล **Logistic Regression** ได้อย่างมหาศาล
-   * แม้การลดมิติจะทำให้สูญเสียรายละเอียดบางส่วนไปบ้าง (Information Loss) แต่ยังคงรักษาความแ
+   * แม้การลดมิติจะทำให้สูญเสียรายละเอียดบางส่วนไปบ้าง (Information Loss)
+
+โปรเจกต์นี้เป็นการทดลองเปรียบเทียบประสิทธิภาพของโมเดล Machine Learning ในการจำแนกประเภทข้อมูลดอกไม้ Iris (Iris Dataset) โดยแบ่งออกเป็น 2 การทดลองหลัก ได้แก่ Support Vector Machine (Lab 5) และ Neural Network (Lab 6)
+ความต้องการของระบบ (Requirements)
+ก่อนเริ่มใช้งาน กรุณาติดตั้งไลบรารีที่จำเป็นด้วยคำสั่ง:
+  pip install pandas matplotlib numpy scikit-learn
+รายละเอียดการทดลองLab 5: Support Vector Machine (SVM) Classificationทดสอบประสิทธิภาพการทำงานของอัลกอริทึม SVM โดยเปรียบเทียบการใช้งาน Kernel Function 3 รูปแบบ:  Linear Kernel  Polynomial Kernel  Radial Basis Function (RBF) Kernel  ขั้นตอนการทำงาน:โหลดข้อมูล Iris Dataset และแบ่งข้อมูลออกเป็น Train 70% และ Test 30%  ปรับมาตรฐานข้อมูลด้วย StandardScaler  เทรนโมเดล SVM ทั้ง 3 Kernels และคำนวณค่า Accuracy Score  แสดงผลลัพธ์:เปรียบเทียบ Accuracy Score ของแต่ละ Kernel ผ่าน Console และ กราฟแท่ง (Bar Chart)  เปรียบเทียบผลการทำนายจริง (Actual Target) กับ ผลการทำนายของ RBF Kernel (Predicted Target) จำนวน 15 ตัวอย่างแรก ผ่าน Console และ กราฟ Scatter Plot  
+
+Lab 6: Neural Network (MLPClassifier) Classificationศึกษาผลกระทบของการปรับเปลี่ยนโครงสร้างซ่อน (Hidden Layers) และจำนวนรอบการเรียนรู้ (Epochs) ใน Neural Network (MLPClassifier)  เงื่อนไขการทดลอง:Architecture Configurations:Config A: 1 Hidden Layer (10 Neurons)  Config B: 2 Hidden Layers (10, 10 Neurons)  Config C: 2 Hidden Layers (20, 10 Neurons)  Epochs: 20, 50, และ 200 รอบ  ขั้นตอนการทำงาน:โหลดข้อมูลและสเกลข้อมูลด้วย StandardScaler เช่นเดียวกับ Lab 5  วนลูปเทรนโมเดล MLP ตาม Config และ Epochs ที่กำหนด  เก็บข้อมูล Train Loss, Validation Accuracy และ Test Accuracy ในแต่ละรอบ  แสดงผลลัพธ์:ตารางสรุปค่า Accuracy Score, Train Loss และ Validation Accuracy ของทุก Configuration  ตัวอย่างผลการทำนายจริงเทียบกับผลทำนายจากโมเดล 15 ตัวอย่าง  กราฟ 3 รูปแบบ:เปรียบเทียบ Accuracy vs. Epochs ของแต่ละ Config  แสดงแนวโน้มการลดลงของ Loss (Training Loss Curve) ที่ 200 Epochs  แสดงแนวโน้มการเพิ่มขึ้นของ Validation Accuracy ที่ 200 Epochs  
