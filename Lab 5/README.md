@@ -7,7 +7,8 @@ Iris Dataset Classification with SVM
 ![SVM Concept](ML-05-SVM (2).pdf#page=4&rect=23,109,977,910)
 2. Kernel Functions (Linear, Poly, RBF)
 ในกรณีที่ข้อมูลไม่สามารถแบ่งด้วยเส้นตรงได้ (Non-linear Data) โค้ดมีการทดสอบใช้ Kernel Functions ทั้ง 3 ชนิด (linear, poly, rbf) เพื่อแปลงข้อมูลไปสู่มิติที่สูงขึ้นและสร้างขอบเขตการตัดสินใจที่เหมาะสม
-![Kernel Functions](ML-05-SVM (2).pdf#page=8&rect=52,143,948,866)
+
+
 ขั้นตอนการทำงานของโค้ด
  * Load Dataset: โหลดข้อมูล Iris จาก sklearn.datasets แล้วแปลงข้อมูลฟีเจอร์เป็น Pandas DataFrame
  * Split Dataset: แบ่งชุดข้อมูลเป็น Train 70% (105 ตัวอย่าง) และ Test 30% (45 ตัวอย่าง) ด้วยคำสั่ง train_test_split(..., test_size=0.3, random_state=42)
