@@ -4,8 +4,9 @@ Iris Dataset Classification with SVM
 ภาพรวมทฤษฎีและแนวคิดที่ใช้ในโค้ด
 1. Support Vector Machine (SVM) & Support Vectors
 โมเดลจะทำการหาเส้นหรือระนาบแบ่งที่เหมาะสมที่สุด (Optimal Hyperplane) เพื่อแยกข้อมูลแต่ละสายพันธุ์ออกจากกันโดยพยายามขยายระยะห่าง (Margin) ระหว่างระนาบแบ่งกับจุดข้อมูลที่ใกล้ที่สุด (Support Vectors) ให้มากที่สุด
-![SVM Concept](ML-05-SVM (2).pdf#page=4&rect=23,109,977,910)
-2. Kernel Functions (Linear, Poly, RBF)
+
+
+3. Kernel Functions (Linear, Poly, RBF)
 ในกรณีที่ข้อมูลไม่สามารถแบ่งด้วยเส้นตรงได้ (Non-linear Data) โค้ดมีการทดสอบใช้ Kernel Functions ทั้ง 3 ชนิด (linear, poly, rbf) เพื่อแปลงข้อมูลไปสู่มิติที่สูงขึ้นและสร้างขอบเขตการตัดสินใจที่เหมาะสม
 
 
