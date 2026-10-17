@@ -1,7 +1,7 @@
 streamlit
 streamlit-drawable-canvas
 scikit-learn
-tensorflow
+tensorflow-cpu
 numpy
 pandas
 pillow
