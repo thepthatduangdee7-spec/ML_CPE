@@ -3,4 +3,6 @@ streamlit-drawable-canvas
 scikit-learn
 tensorflow
 numpy
+pandas
+pillow
 matplotlib
