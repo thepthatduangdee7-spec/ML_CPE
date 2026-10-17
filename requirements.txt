@@ -1,0 +1,6 @@
+streamlit
+streamlit-drawable-canvas
+scikit-learn
+tensorflow
+numpy
+matplotlib
